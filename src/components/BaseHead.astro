@@ -3,7 +3,7 @@ export interface Props {
   title: string;
   description: string;
   permalink?: string;
-  canonicalURL?:string;
+  canonicalURL?:URL;
 }
 
 const { title, description, permalink,canonicalURL } = Astro.props as Props;

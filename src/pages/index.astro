@@ -1,34 +1,31 @@
 ---
-// Component Imports
+import BaseHead from "../components/BaseHead.astro"
+import Hero from "../components/Hero.astro"
+import Features from "../components/Features.astro"
+import Projects from "../components/Projects.astro"
+import Testimonial from "../components/Testimonial.astro"
+import Contact from "../components/Contact.astro"
+import Footer from "../components/Footer.astro"
 
-// You can import components from any supported Framework here!
 
-
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 let title = 'Astro Portfolio W52s #2';
-
-
+let description = 'Astro Portfolio W52s #2';
+const permalink = Astro.site.href;
+let canonicalURL = Astro.request.canonicalURL;
 ---
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>{title}</title>
-
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
-	
-
-	<style>
-
-	</style>
+	<BaseHead title={title} description={description} canonicalURL={canonicalURL} permalink={permalink}/>
 </head>
 <body>
-	<main>
-		<h1>Homepage</h1>
+	<a class="skip-to-content" href="#main-content">Skip to content</a>
+	<main id="main-content">
+		<Hero/>
+		<Features/>
+		<Projects/>
+		<Testimonial/>
+		<Contact/>
+		<Footer/>
 	</main>
 </body>
 </html>
