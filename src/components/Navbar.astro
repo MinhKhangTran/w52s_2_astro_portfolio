@@ -1,6 +1,63 @@
-<style>
-
+---
+const navArray=[
+    {id:1, text:"Features", url:"#features"},
+    {id:2, text:"Projects", url:"#projects"},
+    {id:3, text:"Testimonials", url:"#testimonials"},
+    {id:4, text:"Contact", url:"#contact"},
+    ]
+---
+<style lang="scss">
+    header{
+        border:solid 1px var(--primary-light);
+    }
+    nav{
+        align-items: center;
+        justify-content: space-between;
+    }
+    button{
+        border:none;
+        background: transparent;
+        display: none;
+    }
+    ul{
+        --gap: 2rem;
+        a{
+            text-decoration: none;
+            color: var(--dark)
+        }
+        .hr-link{
+            padding-block: 0.5rem;
+            padding-inline: 0.75rem;
+            border: solid 1px var(--primary);
+            color: var(--primary);
+            transition: all 0.3s ease-in;
+            border-radius: 1px;
+            &:hover{
+                color: var(--light);
+                background: var(--primary);
+            }
+        }
+    }
 </style>
 <header id="header">
-    <h2>Navbar</h2>
+    <nav class="container d-flex">
+        <div>
+            <a href="/">
+                <img src="/assets/Logo.svg" alt="logo of portfolio">
+            </a>
+        </div>
+        <button aria-expanded="false" aria-controls="navigation">
+            <svg id="Capa_1" enable-background="new 0 0 464.205 464.205" height="20" viewBox="0 0 464.205 464.205" width="20" xmlns="http://www.w3.org/2000/svg"><g><g id="grip-solid-horizontal_1_"><path d="m435.192 406.18h-406.179c-16.024 0-29.013-12.99-29.013-29.013s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.99 29.013 29.013-.001 16.023-12.99 29.013-29.014 29.013z"/><path d="m435.192 261.115h-406.179c-16.024 0-29.013-12.989-29.013-29.012s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.989 29.013 29.013s-12.99 29.012-29.014 29.012z"/><path d="m435.192 116.051h-406.179c-16.024 0-29.013-12.989-29.013-29.013s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.989 29.013 29.013s-12.99 29.013-29.014 29.013z"/></g></g></svg>
+            <span class="sr-only">Menu</span>
+        </button>
+        <ul class="d-flex">
+            {navArray.map((nav)=>{
+                return(
+                    <li>
+                        <a class={`${nav.id === 4 ?"hr-link":""}`} href={nav.url}>{nav.text}</a>
+                    </li>
+                )
+            })}
+        </ul>
+    </nav>
 </header>
