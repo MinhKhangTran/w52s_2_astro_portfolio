@@ -169,8 +169,8 @@ ul {
 }
 
 .skip-to-content {
-  background: hsl(var(--light));
-  color: hsl(var(--dark));
+  background: var(--light);
+  color: var(--dark);
   padding: 0.5em 1em;
   margin-inline: auto;
   transform: translateY(-120%);
