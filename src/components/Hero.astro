@@ -1,9 +1,108 @@
 ---
 import Navbar from "./Navbar.astro"
 ---
-<style>
+<style lang="scss">
+    .social_proof{
+        align-items: center;
+        --gap: 1rem;
+        position: relative;
+        & img{
+            width: 32px;
+            aspect-ratio: 1;
+            border: var(--light) 1px solid;
+            border-radius: 90px;
+            z-index: 99;
+        }
+        & .margin{
+            margin-left: -1.5rem;
+        }
+        & .line{
+            width: 300px;
+            height: 2px;
+            background: var(--primary);
+            position: absolute;
+            bottom: 0.5rem;
+        }
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+       
+    }
+    #hero{
+        position: relative;
+    }
+    svg{
+        display: none;
+    }
+    @media (min-width: 768px){
+        #hero{
+            
+        }
+        article{
+            z-index: 90;
+            
+        }
+        .hero{
+            display: grid;
+            border: 1px solid black;
+            height: 100%;
 
+        }
+        .image{
+            width: 50%;
+            position: absolute;
+            right: 0;
+        }
+        svg{
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            left:-50%;
+        }
+    }
+
+   
 </style>
 <section id="hero" aria-label="Hero-Section">
     <Navbar/>
+   
+    <div class="hero container">
+        <article>
+            <p class="">
+                The only value proposition that really matters
+            </p>
+            <h1 class="h1 fw-bold">
+                It’s Time for a Switch-Up
+            </h1>
+            <p class="">
+                You can focus on running your business while I focus on growing it.
+            </p>
+            <button>
+                get Started
+            </button>
+            <section class="social_proof d-flex">
+                <div class=" d-flex" style="--gap:1rem">
+                    {Array.from({length: 5},(v,i)=>{
+                        return(
+                            <img class=`${i>0 ? "margin":""}` src=`/assets/hero/avatar_${i+1}.png` alt=`avatar_${i+1}`/>
+                        )
+                    })}
+                </div>
+                <p>
+                    <span class="fw-bold">30+</span> Happy Clients
+                </p>
+                <div class="line">
+                </div>
+            </section>
+
+        </article>
+        <div class="image">
+         <svg class="" fill="#eff6ff" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points="0,0 50,0 100,100 50,100" />
+        </svg>
+            <img height="630" src="/assets/hero/hero.jpg" alt="Hero image">
+        </div>
+    </div>
 </section>
