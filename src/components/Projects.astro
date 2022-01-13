@@ -1,6 +1,101 @@
-<style>
+---
+import Button from "../components/Button.astro";
+const projectArray=[
+    {id:1,img:"/assets/projects/project-1.png", alt:"project 1"},
+    {id:2,img:"/assets/projects/project-2.png" ,alt:"project 2"},
+    {id:3,img:"/assets/projects/project-3.png" ,alt:"project 3"},
+]
+---
 
-</style>
-<section id="projects" aria-label="Project-Section">
-    <h2>Projects</h2>
+<section class="bg-gray" id="projects" aria-label="Project-Section">
+  <article class="bg-light container">
+    <h2 class="text-center">Several Projects I Enjoyed</h2>
+    <p class="text-center">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida rhoncus
+      volutpat congue mattis sed mollis mollis.
+    </p>
+    {projectArray.map((project)=>{
+        return(
+   <div class={`card-${project.id} card`}>
+      <img src={project.img} alt={project.alt} />
+      <div>
+      <h3 class="h3">
+        Project Name
+      </h3>
+      <p class="card-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh gravida
+        gravida elementum consectetur facilisis vel quam ullamcorper.
+        Condimentum sed ultricies tellus et augue. Lacus eu lobortis scelerisque
+        vitae et. Vestibulum arcu maecenas imperdiet egestas lectus.
+      </p>
+      <p class="card-content">projectname.co.za - Design + Code + Marketing</p>
+      <Button text="visit project" variant="primary"><Button/>
+      </div>
+    </div>
+        )
+    })}
+ 
+  </article>
 </section>
+
+<style>
+#projects{
+    padding-block: 3rem;
+}
+  article {
+    
+    padding-block: 1.5rem;
+    border-radius: 20px;
+    padding-inline: 1rem;
+  }
+  .card-1{
+      padding-top: 2rem;
+  }
+  .card-2,.card-3{
+      padding-top: 3rem;
+  }
+  h3{
+      padding-block: 0.5rem 1rem;
+      position: relative;
+  }
+    h3::after{
+    position: absolute;
+    content:"";
+    width: 125px;
+    height: 4px;
+    background: var(--primary);
+    left:0;
+    bottom:14px;
+    }
+    .card-content{
+        padding-block: 0 1rem;
+    }
+
+    @media (min-width: 768px){
+        #projects{
+            padding-block: 4.5rem;
+        }
+        article{
+            
+    padding-block: 4rem;
+    padding-inline: 6.375rem;
+        }
+        .card{
+            display: flex;
+            gap: 1rem;
+        }
+        img{
+            width: 488px;
+            height: 400px;
+        }
+          .card-1{
+      padding-top: 3rem;
+  }
+  .card-2,.card-3{
+      padding-top: 6rem;
+  }
+  .card-2{
+      flex-direction: row-reverse;
+  }
+    }
+</style>
