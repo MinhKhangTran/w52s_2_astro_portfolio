@@ -1,123 +1,122 @@
----
-import Navbar from "./Navbar.astro"
----
-<style lang="scss">
-    #hero{
-        position: relative;
-        overflow: hidden;
-    }
-    .wrapper{
-        position: relative;
-        z-index: 10;
-    }
-    svg{
-        display: none;
-        position: absolute;
-        right: 0;
-        inset-block: 0;
-        height: 100%;
-        width: 12rem;
-        transform: translateX(50%);
-    }
-    article{
-        margin-top: 1rem;
-        margin-inline: auto;
-        max-width: 80rem;
-
-    }
-    .image img{
-        height: 14rem;
-        width: 100%;
-        object-fit: cover;
-    }
-   
-
-    .social_proof{
-        align-items: center;
-        --gap: 1rem;
-        position: relative;
-        & img{
-            width: 32px;
-            aspect-ratio: 1;
-            border: var(--light) 1px solid;
-            border-radius: 90px;
-            z-index: 99;
-        }
-        & .margin{
-            margin-left: -1.5rem;
-        }
-        & .line{
-            width: 300px;
-            height: 2px;
-            background: var(--primary);
-            position: absolute;
-            bottom: 0.5rem;
-        }
-    }
-   
-    @media (min-width: 768px){
-        .wrapper{
-            max-width: 42rem;
-            width: 100%;
-        }
-        svg{
-            display: block;
-        }
-         .image{
-             position: absolute;
-             inset-block: 0;
-             right: 0;
-             width: 50%;
-             & img{
-                 height: 100%;
-                 width: 100%;
-             }
-        }
-    }
-
-   
-</style>
-<section id="hero" aria-label="Hero-Section">   
-    
-    <div class="container">
-        <div class="wrapper">
-            <svg class="" fill="#eff6ff" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                <polygon points="0,0 50,0 100,100 50,100" />
-            </svg>
-<Navbar/>
-            <article>
-                <div>
-                    <p class="">
-                        The only value proposition that really matters
-                    </p>
-                    <h1 class="h1 fw-bold">
-                        It’s Time for a Switch-Up
-                    </h1>
-                    <p class="">
-                        You can focus on running your business while I focus on growing it.
-                    </p>
-                    <button>
-                        get Started
-                    </button>
-                    <section class="social_proof d-flex">
-                        <div class=" d-flex" style="--gap:1rem">
-                            {Array.from({length: 5},(v,i)=>{
-                                return(
-                                    <img class=`${i>0 ? "margin":""}` src=`/assets/hero/avatar_${i+1}.png` alt=`avatar_${i+1}`/>
-                                )
-                            })}
-                        </div>
-                        <p>
-                            <span class="fw-bold">30+</span> Happy Clients
-                        </p>
-                        <div class="line">
-                        </div>
-                    </section>
-                </div>
-            </article>
-        </div>
+<section id="hero" aria-label="Hero-Section" class="hero container">
+  <svg
+    class="svg"
+    fill="#eff6ff"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <polygon points="0,0 0,0 25,100 0,100" />
+  </svg>
+  <div class="text">
+    <p class="">The only value proposition that really matters</p>
+    <h1 class="h1 fw-bold">It’s Time for a Switch-Up</h1>
+    <p class="">
+      You can focus on running your business while I focus on growing it.
+    </p>
+    <div>
+      <button class="cta">get Started</button>
     </div>
-    <div class="image">
-        <img src="/assets/hero/hero.jpg" alt="Hero image">
-    </div>
+            <section class="social_proof d-flex">
+            <div class=" d-flex" style="--gap:1rem">
+                {Array.from({length: 5},(v,i)=>{
+                    return(
+                        <img class=`${i>0? "margin":""}` src=`/assets/hero/avatar_${i+1}.png` alt=`avatar_${i+1}`/>
+                        )
+                })}
+            </div>
+            <p>
+                <span class="fw-bold">30+</span> Happy Clients
+            </p>
+            <div class="line"></div>
+        </section>
+  </div>
+  <div class="image">
+    <img src="/assets/hero/hero.jpg" alt="Hero image" />
+  </div>
 </section>
+
+<style lang="scss">
+  .svg {
+    display: none;
+  }
+  .feat {
+    background: var(--gray);
+    margin-top: -3rem;
+    padding-top: 3rem;
+  }
+  .h1 {
+    padding-block: 1rem;
+  }
+  .hero {
+    min-height: 70vh;
+  }
+  .hero .image img {
+    border-radius: 0.5rem;
+  }
+  .hero .image {
+    padding-top: 2rem;
+  }
+
+  .social_proof {
+    align-items: center;
+    --gap: 1rem;
+    position: relative;
+    & img {
+      width: 32px;
+      aspect-ratio: 1;
+      border: var(--light) 1px solid;
+      border-radius: 90px;
+      z-index: 99;
+    }
+    & .margin {
+      margin-left: -1.5rem;
+    }
+    & .line {
+      width: 300px;
+      height: 2px;
+      background: var(--primary);
+      position: absolute;
+      bottom: 0.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      display: flex;
+    }
+    .hero .text {
+      width: 50%;
+
+      height: 70vh;
+      flex-direction: column;
+      display: flex;
+
+      justify-content: center;
+    }
+    .hero .image {
+      width: 50%;
+      position: absolute;
+      right: 0;
+      padding-top: 0rem;
+    }
+    .hero .image img {
+      height: 70vh;
+      object-fit: cover;
+      border-radius: 0;
+    }
+    .svg {
+      position: absolute;
+      height: 70vh;
+      left: 50%;
+      z-index: 10;
+      display: block;
+      width: 50%;
+    }
+    .feat {
+      margin-top: 0rem;
+      padding-top: 0rem;
+      height: calc(100vh - 70vh - 51px);
+    }
+  }
+</style>

@@ -1,32 +1,33 @@
 ---
-import BaseHead from "../components/BaseHead.astro"
-import Hero from "../components/Hero.astro"
-import Hero_tw from "../components/Hero_tw.astro"
-import Features from "../components/Features.astro"
-import Projects from "../components/Projects.astro"
-import Testimonial from "../components/Testimonial.astro"
-import Contact from "../components/Contact.astro"
-import Footer from "../components/Footer.astro"
+import BaseHead from "../components/BaseHead.astro";
+import Hero from "../components/Hero.astro";
+import Navbar from "../components/Navbar.astro";
+import Features from "../components/Features.astro";
+import Projects from "../components/Projects.astro";
+import Testimonial from "../components/Testimonial.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
-
-let title = 'Astro Portfolio W52s #2';
-let description = 'Astro Portfolio W52s #2';
+let title = "Astro Portfolio W52s #2";
+let description = "Astro Portfolio W52s #2";
 const permalink = Astro.site.href;
 let canonicalURL = Astro.request.canonicalURL;
 ---
+
 <html lang="en">
-<head>
-	<BaseHead title={title} description={description} canonicalURL={canonicalURL} permalink={permalink}/>
-</head>
-<body>
-	<a class="skip-to-content" href="#main-content">Skip to content</a>
-	<main id="main-content">
-		<Hero/>
-		<Features/>
-		<Projects/>
-		<Testimonial/>
-		<Contact/>
-		<Footer/>
-	</main>
-</body>
+  <head>
+    <BaseHead {title} {description} {canonicalURL} {permalink} />
+  </head>
+  <body>
+    <a class="skip-to-content" href="#main-content">Skip to content</a>
+    <main id="main-content">
+      <Navbar />
+      <Hero />
+      <Features />
+      <Projects />
+      <Testimonial />
+      <Contact />
+      <Footer />
+    </main>
+  </body>
 </html>
