@@ -1,3 +1,7 @@
+
+---
+import Button from "./Button.astro"
+---
 <section id="hero" aria-label="Hero-Section" class="hero container">
   <svg
     class="svg"
@@ -14,14 +18,14 @@
     <p class="">
       You can focus on running your business while I focus on growing it.
     </p>
-    <div>
-      <button class="cta">get Started</button>
+    <div class="cta">
+      <Button text="get started" variant="secondayr"/>
     </div>
             <section class="social_proof d-flex">
             <div class=" d-flex" style="--gap:1rem">
                 {Array.from({length: 5},(v,i)=>{
                     return(
-                        <img class=`${i>0? "margin":""}` src=`/assets/hero/avatar_${i+1}.png` alt=`avatar_${i+1}`/>
+                        <img class=`${i>0? "margin":""} ${i>2 && "mobile_weg"}` src=`/assets/hero/avatar_${i+1}.png` alt=`avatar_${i+1}`/>
                         )
                 })}
             </div>
@@ -46,10 +50,11 @@
     padding-top: 3rem;
   }
   .h1 {
-    padding-block: 1rem;
+    padding-block: 0.5rem;
   }
   .hero {
     min-height: 70vh;
+    padding-top: 1.5rem;
   }
   .hero .image img {
     border-radius: 0.5rem;
@@ -57,13 +62,17 @@
   .hero .image {
     padding-top: 2rem;
   }
+  .cta{
+      padding-block: 1rem 1.5rem;
+  }
+ 
 
   .social_proof {
     align-items: center;
     --gap: 1rem;
     position: relative;
     & img {
-      width: 32px;
+      width: 36px;
       aspect-ratio: 1;
       border: var(--light) 1px solid;
       border-radius: 90px;
@@ -72,8 +81,11 @@
     & .margin {
       margin-left: -1.5rem;
     }
+    & .mobile_weg{
+        display: none;
+    }
     & .line {
-      width: 300px;
+      width: 240px;
       height: 2px;
       background: var(--primary);
       position: absolute;
@@ -85,9 +97,12 @@
     .hero {
       display: flex;
     }
+    .h1{
+        padding-block: 1rem;
+    }
     .hero .text {
       width: 50%;
-
+    
       height: 70vh;
       flex-direction: column;
       display: flex;
@@ -118,5 +133,16 @@
       padding-top: 0rem;
       height: calc(100vh - 70vh - 51px);
     }
+      .cta{
+      padding-block: 2rem;
+  }
+    .social_proof {
+& .mobile_weg{
+        display: block;
+    }
+    & .line {
+      width: 300px;
+    }
+  }
   }
 </style>

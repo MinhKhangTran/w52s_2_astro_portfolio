@@ -1,0 +1,41 @@
+---
+export interface Props {
+  text: string;
+  variant: "primary" | "secondary";
+}
+
+const { text, variant } = Astro.props as Props;
+---
+
+<button class=`uppercase text-light body-lg ${variant ==="primary"?"primary":"secondary"}`>
+  {text}
+</button>
+
+<style lang="scss">
+    button{
+        border:none;
+        padding-block: 4px;
+        padding-inline: 8px;
+        cursor:pointer;
+        transition: all 0.3s ease-in;
+    }
+    .primary{
+        background: var(--primary);
+        &:hover{
+            background: #0E3A9A;
+        }
+        &:focus-visible{
+            outline: 4px dashed var(--dark);
+        }
+    }
+       .secondary{
+        background: var(--secondary);
+        &:hover{
+            background: #966603;
+        }
+        &:focus-visible{
+            outline: 4px dashed var(--dark);
+        }
+    }
+
+</style>
