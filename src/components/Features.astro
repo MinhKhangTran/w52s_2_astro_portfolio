@@ -1,6 +1,78 @@
-<style>
+---
+const featIcons = [
+  { id: 1, src: "/assets/icon/005-nike.svg", alt: "nike" },
+  { id: 2, src: "/assets/icon/006-adidas.svg", alt: "adidas" },
+  { id: 3, src: "/assets/icon/007-mcdonalds.svg", alt: "mcdonalds" },
+  { id: 4, src: "/assets/icon/008-tripadvisor.svg", alt: "tripadvisor" },
+  { id: 5, src: "/assets/icon/009-amd.svg", alt: "amd" },
+  { id: 6, src: "/assets/icon/010-apple.svg", alt: "apple" },
+  {
+    id: 7,
+    src: "/assets/icon/011-electronics-arts.svg",
+    alt: "electronics-arts",
+  },
+  { id: 8, src: "/assets/icon/012-windows.svg", alt: "windows" },
+];
+---
 
-</style>
-<section id="features" aria-label="Feature-Section">
-    <h2>Feature</h2>
+<section id="features" class="" aria-label="Feature-Section">
+  <div class="container">
+    <p class="body-lg uppercase">EQUIPPED WITH THE EXPERIENCE THAT MATTERS</p>
+    <div class="socials d-grid">
+      {featIcons.map((icon) => {
+        return <img src={icon.src} alt={icon.alt} />;
+      })}
+    </div>
+    <p class="body-lg">
+      Hired by creative agencies and ambitious clients like <span
+        class="text-secondary">THORChain</span
+      >, <span class="text-secondary">Illuvium</span>, and <span
+        class="text-secondary">Arsenal F.C.</span
+      >
+    </p>
+  </div>
 </section>
+
+<style>
+  #features {
+    background: var(--gray);
+    margin-top: -4.5rem;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+  }
+  .socials {
+    grid-template-columns: repeat(4, 1fr);
+
+    width: 50%;
+    place-items: center;
+    margin-inline: auto;
+    padding-block: 0.875rem;
+  }
+  img {
+    width: 36px;
+    aspect-ratio: 1;
+  }
+  p {
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    #features {
+      margin-top: 0rem;
+      padding-block: 3rem;
+      height: calc(100vh - 70vh - 51px);
+    }
+    .socials {
+      grid-template-columns: repeat(8, 1fr);
+
+      width: 55ch;
+      place-items: center;
+      margin-inline: auto;
+      padding-block: 1.5rem 2rem;
+    }
+    p {
+      width: 55ch;
+      margin-inline: auto;
+    }
+  }
+</style>

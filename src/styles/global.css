@@ -140,6 +140,10 @@ ul {
   display: block;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* * + * === *:not(:first-child) with where higher specificity  */
 
 .flow > *:where(:not(:first-child)) {

@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 import Features from "../components/Features.astro";
+import Benefits from "../components/Benefits.astro";
 import Projects from "../components/Projects.astro";
 import Testimonial from "../components/Testimonial.astro";
 import Contact from "../components/Contact.astro";
@@ -20,10 +21,11 @@ let canonicalURL = Astro.request.canonicalURL;
   </head>
   <body>
     <a class="skip-to-content" href="#main-content">Skip to content</a>
+    <Navbar />
     <main id="main-content">
-      <Navbar />
       <Hero />
       <Features />
+      <Benefits />
       <Projects />
       <Testimonial />
       <Contact />

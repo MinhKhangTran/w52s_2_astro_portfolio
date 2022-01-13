@@ -1,0 +1,93 @@
+---
+const cardArray = [
+  {
+    id: 1,
+    icon: "/assets/icon/013-web-design.svg",
+    alt: "web-design",
+    header1: "Designs",
+    header2: "that impress",
+  },
+  {
+    id: 2,
+    icon: "/assets/icon/014-social-media.svg",
+    alt: "social-media",
+    header1: "Social Media",
+    header2: "to attrackt crowds",
+  },
+  {
+    id: 3,
+    icon: "/assets/icon/015-puzzle.svg",
+    alt: "Feautres",
+    header1: "Build Features",
+    header2: "that matter",
+  },
+  {
+    id: 4,
+    icon: "/assets/icon/016-copywriting.svg",
+    alt: "copywriting",
+    header1: "Copywriting",
+    header2: "that convinces",
+  },
+];
+---
+
+<section class="container" id="benefits" aria-label="Benefits-Section">
+  <h2 class="h2 fw-bold text-center">How I'll Grow Your Business</h2>
+  <p class="text-center">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida rhoncus
+    volutpat congue mattis sed mollis mollis.
+  </p>
+  <section class="cards">
+    {cardArray.map((card) => {
+      return (
+        <div class="card">
+          <img width="48" height="48" src={card.icon} alt={card.alt} />
+          <p class="card-header">
+            <span class="fw-bold text-secondary">{card.header1}</span>{" "}
+            {card.header2}
+          </p>
+          <p class="card-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
+            odio et scelerisque id arcu risus etiam metus. Arcu, mauris arcu
+            morbi placerat in cursus dictum et. Mattis blandit lectus nisl
+            gravida magna augue placerat nunc. Non orci venenatis tortor nunc,
+            dui sed hendrerit scelerisque eu.
+          </p>
+        </div>
+      );
+    })}
+  </section>
+</section>
+
+<style>
+  #benefits {
+    padding-block: 3rem;
+  }
+  p.text-center {
+    padding-top: 0.5rem;
+  }
+  img {
+    color: var(--secondary);
+  }
+  .card {
+    margin-top: 2.5rem;
+  }
+  .card-header {
+    padding-block: 0.5rem 0.25rem;
+  }
+  @media (min-width: 768px) {
+    #benefits {
+      padding-block: 6rem;
+    }
+    p.text-center {
+      padding-top: 1rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card-content {
+      width: 55ch;
+    }
+  }
+</style>
