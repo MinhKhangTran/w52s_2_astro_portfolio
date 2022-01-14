@@ -69,6 +69,7 @@ const cardArray = [
   img {
     color: var(--secondary);
   }
+
   .card {
     margin-top: 2.5rem;
   }
@@ -84,10 +85,11 @@ const cardArray = [
     }
     .cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 50ch), 1fr));
+      gap: 2rem;
     }
     .card-content {
-      width: 55ch;
+      width: 50ch;
     }
   }
 </style>

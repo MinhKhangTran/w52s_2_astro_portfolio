@@ -1,7 +1,100 @@
-<footer id="footer">
-  <h2>Footer</h2>
+<footer id="footer" class="bg-gray">
+  <div class="container">
+    <div class="main-footer">
+      <a href="/">
+        <img src="/assets/Logo.svg" alt="logo of portfolio" />
+      </a>
+      <p class="main-footer-text">
+        You can focus on running your business while I focus on growing it.
+      </p>
+      <div class="socials d-flex" style="--gap:1.5rem">
+        <a href="https://www.facebook.com">
+          <img width="48" src="/assets/icon/002-facebook.svg" alt="facebook" />
+        </a>
+        <a href="https://www.twitter.com">
+          <img width="48" src="/assets/icon/003-twitter.svg" alt="twitter" />
+        </a>
+        <a href="https://www.messenger.com">
+          <img
+            width="48"
+            src="/assets/icon/004-messenger.svg"
+            alt="messenger"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="rest">
+      <div class="company">
+        <h3 class="fw-bold uppercase h3">Company</h3>
+        <ul class="flow">
+          <li>
+            <a href="#benefits">Benefits</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="legal">
+        <h3 class="fw-bold uppercase h3">Legal</h3>
+        <ul class="flow">
+          <li>
+            <a href="#terms">Terms</a>
+          </li>
+          <li>
+            <a href="#privacy">Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="text-center container">© FTM 2021</p>
 </footer>
 
 <style>
+  .main-footer {
+    padding-block: 1rem;
+  }
+  .main-footer-text {
+    padding-block: 1rem;
+  }
+  .rest {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+  ul {
+    padding: 0;
+  }
 
+  li a {
+    text-decoration: none;
+    color: var(--dark);
+  }
+  p.text-center {
+    padding-block: 1rem;
+    border-top: 1px solid hsl(0 0% 20% / 0.15);
+  }
+  @media (min-width: 768px) {
+    .main-footer {
+      padding-block: 2rem;
+    }
+    .main-footer-text {
+      width: 30ch;
+    }
+    div.container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .rest {
+      gap: 4rem;
+      padding-block: 2rem;
+    }
+  }
 </style>

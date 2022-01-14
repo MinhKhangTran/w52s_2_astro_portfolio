@@ -1,7 +1,49 @@
-<section id="contact" aria-label="Contact-Section">
-  <h2>Contact</h2>
+---
+import Button from "./Button.astro"
+---
+
+<section id="contact" class="bg-primary-light" aria-label="Contact-Section">
+  <div class="container">
+    <h2 class="h2 fw-bold text-center">Let's Get to Work Today</h2>
+    <form class="flow" style="--flow-space: 0.75rem" >
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input required type="text" placeholder="Name..." id="name" />
+    </div>
+    <div class="form-control">
+      <label for="e-mail">E-Mail</label>
+      <input required type="text" placeholder="E-Mail..." id="e-mail" />
+    </div>
+    <div class="form-control">
+      <label for="message">Message</label>
+      <textarea required placeholder="Message" id="message" name="w3review" rows="4" cols="50">
+</textarea
+      >
+    </div>
+    <Button text="Submit" variant="secondary"></Button>
+    </form>
+  </div>
 </section>
 
 <style>
-
+  section {
+    padding-block: 1.5rem;
+    margin-block: 7rem 1rem;
+  }
+  .form-control{
+    display: flex;
+    flex-direction: column;
+  }
+  .form-control:first-child{
+    padding-top: 1rem;
+  }
+  @media (min-width: 768px){
+    section{
+      padding-block: 3rem;
+      width: 42rem;
+      margin-inline:auto;
+      margin-block: 7rem 3rem;
+      border-radius: 8px;
+    }
+  }
 </style>
